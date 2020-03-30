@@ -5,7 +5,7 @@ import java.util.Stack;
 public class HistoryStack {
 	
 	/*stack of rnp states -> History */
-	private  Stack<Stack <Double> > history = new Stack<Stack <Double>>(); 
+	private  Stack< Stack<Double> > history = new Stack<Stack<Double>>(); 
 	
 	/*methods*/
 	
@@ -14,8 +14,10 @@ public class HistoryStack {
 	 * @param <Stack<Double> elt
 	 */
 	public  void addStack(Stack<Double> elt) {
-		this.history.push(elt);
+		
+		history.push(elt);
 	}
+	
 	
 	/**
 	 * delete a rnp state from the history
@@ -24,24 +26,24 @@ public class HistoryStack {
 		history.pop();
 	}
 	
+	
 	/**
-	 * displaye the last rnp state
+	 * display the last rnp state
 	 */
 	public void writeStack() {
 		Stack<Double> temp = new Stack<Double>();
 		temp = history.pop();
 		System.out.println(temp.toString());
-		history.push(temp);
+		history.add(temp);
 	}
 	
 	/**
 	 * display the history 
 	 */
 	public void writeHistory() {
-		for(int i = 0; i < history.size(); i++) {
-			System.out.println(i+"i"+history.get(i).toString());
-		}
+			System.out.println(history.toString());
+		
 	}
 	
-	/*Affiche*/
+	
 }
